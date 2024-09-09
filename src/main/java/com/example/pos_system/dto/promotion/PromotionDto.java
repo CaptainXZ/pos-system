@@ -18,4 +18,5 @@ public class PromotionDto {
     private String buyItem;
     private String getItem;
     private Double discountPercentage;
+    private String status;
 }
