@@ -94,7 +94,7 @@ public abstract class BaseServiceImpl <T, D, ID extends Serializable> implements
 	private void autoUpdateEntity(T existingEntity) { 
 		try { 
 			// increase the modNumbs 
-			Field modNumsField = getDeclaField(existingEntity.getClass(), "modNums");
+			Field modNumsField = getDeclaField(existingEntity.getClass(), "modNum");
 			modNumsField.setAccessible(true);
 			int currentModNumber = (int) modNumsField.get(existingEntity);
 			modNumsField.set(existingEntity, currentModNumber + 1);
