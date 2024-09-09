@@ -56,7 +56,7 @@ public abstract class BaseServiceImpl <T, D, ID extends Serializable> implements
 	@Transactional
 	public T update(ID id, T entity) { 
 		T existingEntity = getRepository().findById(id).orElse(null);
-		if (existingEntity == null) {
+		if (existingEntity != null) {
 			updateEntityField(existingEntity, entity);
 			autoUpdateEntity(existingEntity);
 
