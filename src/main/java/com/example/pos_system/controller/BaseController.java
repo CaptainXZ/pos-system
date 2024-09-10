@@ -81,9 +81,9 @@ public abstract class BaseController<T, D, ID extends Serializable> {
         return new ResponseModel<>(page, "Fetched entities", "200", null);
     }
 
-    @GetMapping("/{id}")
-    public ResponseModel<T> getById(@PathVariable ID id) {
-		System.out.println("id: "+ id);
+    @GetMapping("/id")
+    public ResponseModel<T> getById(@RequestParam ID id) {
+		System.out.println("id: "+id);
         T entity = getService().getById(id);
         if (entity == null) {
             return new ResponseModel<>(null, "Entity not found", "404", null);

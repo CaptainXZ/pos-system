@@ -13,6 +13,8 @@ import lombok.Setter;
 
 import java.io.Serializable;
 
+import org.aspectj.weaver.tools.Trace;
+
 @Getter
 @Setter
 @MappedSuperclass
