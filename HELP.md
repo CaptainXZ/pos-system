@@ -3,7 +3,7 @@ The following was discovered as part of building this project:
 
 * The original package name 'com.example.pos-system' is invalid and this project uses 'com.example.pos_system' instead.
 
-# Getting Started
+# Getting Started New Update
 
 ### Reference Documentation
 For further reference, please consider the following sections:
