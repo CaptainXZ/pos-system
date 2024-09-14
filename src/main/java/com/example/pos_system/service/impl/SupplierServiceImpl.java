@@ -13,8 +13,8 @@ import com.example.pos_system.service.SupplierService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
-public class SupplierServiceImpl extends BaseServiceImpl<Supplier, SupplierDto, String>
-        implements SupplierService {
+public class SupplierServiceImpl extends BaseServiceImpl<Supplier, SupplierDto, String> 
+implements SupplierService {
 
     @Autowired
     private SupplierRepository supplierRepository;
@@ -25,15 +25,13 @@ public class SupplierServiceImpl extends BaseServiceImpl<Supplier, SupplierDto, 
     public JpaRepository getRepository() {
         return supplierRepository;
     }
-
     @Override
     protected SupplierDto convertToDto(Supplier entity) {
         return objectMapper.convertValue(entity, SupplierDto.class);
     }
-
-    @Override
-    public List<Supplier> getAll() {
-        return super.getAll();
-    }
-
+	
+	@Override
+	public List<Supplier> getAll() {
+		return super.getAll();
+	}
 }

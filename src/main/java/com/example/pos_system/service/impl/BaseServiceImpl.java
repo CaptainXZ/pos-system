@@ -56,7 +56,7 @@ public abstract class BaseServiceImpl <T, D, ID extends Serializable> implements
 	@Transactional
 	public T update(ID id, T entity) { 
 		T existingEntity = getRepository().findById(id).orElse(null);
-		if (existingEntity != null) {
+		if (existingEntity == null) {
 			updateEntityField(existingEntity, entity);
 			autoUpdateEntity(existingEntity);
 
@@ -94,7 +94,7 @@ public abstract class BaseServiceImpl <T, D, ID extends Serializable> implements
 	private void autoUpdateEntity(T existingEntity) { 
 		try { 
 			// increase the modNumbs 
-			Field modNumsField = getDeclaField(existingEntity.getClass(), "modNum");
+			Field modNumsField = getDeclaField(existingEntity.getClass(), "modNums");
 			modNumsField.setAccessible(true);
 			int currentModNumber = (int) modNumsField.get(existingEntity);
 			modNumsField.set(existingEntity, currentModNumber + 1);

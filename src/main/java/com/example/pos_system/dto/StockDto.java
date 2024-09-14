@@ -5,10 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class CustomErrorResponse {
-	private String message;
-	private int status;
-	private long timestamp;
+@NoArgsConstructor
+public class StockDto {
+    private String productName;
+    private int onHand;
+    private String status;
+
 }
+
